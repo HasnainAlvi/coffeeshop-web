@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 4rem;
+    background-color:black;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 2rem;
+    color: #7ad37a;
+    font-family: "Dancing Script", cursive;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    font-size: 1rem;
+    list-style-type: none;
+    display: flex;
+    gap: 3rem;
+}
+
+.nav-list li a:hover {
+    color: #7ad37a;
+    text-decoration: underline;
+}
+
+.icon {
+    font-size: 1.5rem;
+    color: #7ad37a;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+@media (max-width:768px) {
+    .header {
+        padding: 0.5rem 1rem;
+    }
+
+    .nav {
+        position: fixed;
+        top: 90px;
+        left: 0;
+        right: 0;
+        background-color:black;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.5s ease;
+        width: 100%;
+        z-index: 9;
+    }
+
+    .nav.open {
+        max-height: 100vh;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+
+    .hamburger {
+        display: block;
+        margin-left: auto;
+    }
+
+    .icon {
+        display: block;
+    }
+}
